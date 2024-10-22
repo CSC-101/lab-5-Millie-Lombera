@@ -13,22 +13,21 @@ class Time:
         self.minute = minute
         self.second = second
 
-    def __eq__(self, other:Any)->bool:
-        return (other is self or type(other) == Time and self.hour == other.hour
-                and self.minute == other.hour and self.second == other.second)
-
-    # Provide a developer-friendly string representation of the object.
-    # input: Time for which a string representation is desired. 
-    # output: string representation
-
-
     # Compare the Time object with another value to determine equality.
     # input: Time against which to compare
     # input: Another value to compare to the Time
     # output: boolean indicating equality
 
+    def __eq__(self, other:Any)->bool:
+        return (other is self or type(other) == Time and self.hour == other.hour
+                and self.minute == other.hour and self.second == other.second)
 
 
+    # Provide a developer-friendly string representation of the object.
+    # input: Time for which a string representation is desired. 
+    # output: string representation
+    def __repr__(self) -> str:
+        return "Hour: {}, Minute: {}, Second:{}".format(self.hour,self.minute,self.second)
 
 # Representation of a two-dimensional point.
 class Point:

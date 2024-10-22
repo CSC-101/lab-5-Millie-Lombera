@@ -28,9 +28,12 @@ class TestCases(unittest.TestCase):
 
 
     #### Add tests for Time.__repr__
-
-
-
+    def test_Time_repr(self):
+        time = data.Time(4,2,1)
+        self.assertEqual(4,time.hour)
+        self.assertEqual(2,time.minute)
+        self.assertEqual(1,time.second)
+        self.assertNotEqual(3,time.hour)
 
     #### Point tests
     def test_Point_1(self):

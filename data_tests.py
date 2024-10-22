@@ -20,6 +20,13 @@ class TestCases(unittest.TestCase):
 
     #### Add tests for Time.__eq__
 
+    def test_Time_eq_(self):
+        time = data.Time(5,6,10)
+        self.assertEqual(5,time.hour)
+        self.assertEqual(6,time.minute)
+        self.assertEqual(10,time.second)
+
+
     #### Add tests for Time.__repr__
 
 

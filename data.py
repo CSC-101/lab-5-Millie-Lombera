@@ -13,6 +13,9 @@ class Time:
         self.minute = minute
         self.second = second
 
+    def __eq__(self, other:Any)->bool:
+        return (other is self or type(other) == Time and self.hour == other.hour
+                and self.minute == other.hour and self.second == other.second)
 
     # Provide a developer-friendly string representation of the object.
     # input: Time for which a string representation is desired. 

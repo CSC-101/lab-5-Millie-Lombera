@@ -43,11 +43,10 @@ def largest_between(nums, lower, upper):
     if lower > upper or not (0 <= lower < len(nums)) or not (0 <= upper < len(nums)):
         return None
 
-    # Adjust lower and upper to ensure they are within bounds
     lower = max(0, lower)
     upper = min(len(nums) - 1, upper)
 
-    # Find the index of the largest element between lower and upper (inclusive)
+
     max_index = lower
     for i in range(lower, upper + 1):
         if nums[i] > nums[max_index]:
@@ -60,13 +59,11 @@ def furthest_from_origin(points):
     if not points:
         return None
 
-    # Initialize variables to track the maximum distance and its index
     max_index = 0
-    max_distance = points[0].x**2 + points[0].y**2  # Distance squared for efficiency
+    max_distance = points[0].x**2 + points[0].y**2
 
-    # Loop through points to find the one furthest from origin
     for i in range(1, len(points)):
-        distance = points[i].x**2 + points[i].y**2  # Calculate distance squared
+        distance = points[i].x**2 + points[i].y**2
         if distance > max_distance:
             max_distance = distance
             max_index = i

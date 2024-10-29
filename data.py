@@ -19,8 +19,11 @@ class Time:
     # output: boolean indicating equality
 
     def __eq__(self, other:Any)->bool:
-        return (other is self or type(other) == Time and self.hour == other.hour
-                and self.minute == other.hour and self.second == other.second)
+        if(type(other) == type(self) and self.hour == other.hour
+                and self.minute == other.minute and self.second == other.second):
+            return True
+        return False
+
 
 
     # Provide a developer-friendly string representation of the object.

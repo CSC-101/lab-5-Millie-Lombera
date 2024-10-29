@@ -20,10 +20,20 @@ class TestCases(unittest.TestCase):
 
     #### Add tests for Time.__eq__
 
+    def test_Time_eq_(self):
+        time = data.Time(5,6,10)
+        self.assertEqual(5,time.hour)
+        self.assertEqual(6,time.minute)
+        self.assertEqual(10,time.second)
+
+
     #### Add tests for Time.__repr__
-
-
-
+    def test_Time_repr(self):
+        time = data.Time(4,2,1)
+        self.assertEqual(4,time.hour)
+        self.assertEqual(2,time.minute)
+        self.assertEqual(1,time.second)
+        self.assertNotEqual(3,time.hour)
 
     #### Point tests
     def test_Point_1(self):
